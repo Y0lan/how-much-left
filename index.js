@@ -3,6 +3,8 @@ const priceRoute = require('./routes/price')
 const bodyParser = require('body-parser')
 const path = require("path");
 const app = express()
+const port = 3000
+process.env.PORT = port
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(priceRoute)
@@ -17,6 +19,6 @@ app.get('/', (req, res) => {
         percent:''
     })
 })
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("app listening")
 })
