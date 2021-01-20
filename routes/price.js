@@ -13,20 +13,20 @@ const getFormattedData = async (invest) => {
 
 app.post('/', async (req, res) => {
     const invested = Number(req.body.invested)
+    let color = '#DDDDDD'
     if (invested <= 0 || isNaN(invested)) {
         return res.render('index', {
-            color: '#AAAAAA',
+            color,
             amount: '',
             percent: '',
             diff: ''
         });
     }
     let {amount, percent} = await getFormattedData(Number(invested))
-    let color = '#DDDDDD'
     let prefixPercent = 'Gain de '
     let prefixDifference = 'Gain de '
     if (isNaN(percent)) percent = ''
-    else if (percent > 2) color = '#01FF70'
+    else if (percent > 2) color = '#3D9970'
     else if (percent < 0) {
         prefixPercent = 'Perte de '
         prefixDifference = 'Perte de '

@@ -13,12 +13,15 @@
 </head>
 <body style="background:<%=color%>">
 <div class="container">
-    <div class="row" id="form">
+    <div class="row center" id="form" >
         <h4>Montant investi en €</h4>
         <form class="col s12" method="post" action="/">
             <div class="row">
-                <div class="input-field col s12">
-                    <input id="invested" name="invested" class="materialize-textarea">
+                <div class="input-field col s10">
+                    <input  style="background:#FFFFFF" id="invested" name="invested" class="materialize-textarea">
+                </div>
+                <div class="input-field col s2">
+                    <input class="btn waves-effect waves-light btn-large" type="submit" name="action" value="CALCUL">
                 </div>
             </div>
         </form>
