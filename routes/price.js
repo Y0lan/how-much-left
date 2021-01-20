@@ -17,7 +17,8 @@ app.post('/', async (req, res) => {
         return res.render('index', {
             color: '#AAAAAA',
             amount: '',
-            percent: ''
+            percent: '',
+            diff: ''
         });
     }
     let {amount, percent} = await getFormattedData(Number(invested))
@@ -38,7 +39,7 @@ app.post('/', async (req, res) => {
         color,
         amount: amount + '€' + ' pour ' + invested + '€',
         percent: prefixPercent + percent + '%',
-        difference: prefixDifference + difference + '€'
+        diff: prefixDifference + difference + '€'
     });
 })
 

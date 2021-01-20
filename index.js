@@ -2,9 +2,11 @@ const express = require('express');
 const priceRoute = require('./routes/price')
 const bodyParser = require('body-parser')
 const path = require("path");
+const dotenv = require("dotenv")
+
+dotenv.config()
 const app = express()
-const port = 3000
-process.env.PORT = port
+const port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(priceRoute)
@@ -16,9 +18,10 @@ app.get('/', (req, res) => {
     res.render('index', {
         color: '#AAAAAA',
         amount:'',
-        percent:''
+        percent:'',
+        diff: ''
     })
 })
 app.listen(port, () => {
-    console.log("app listening")
+    console.log(`app listening on ${port}`)
 })
