@@ -5,7 +5,7 @@ const percent_diff = require('percentage-difference');
 
 const getFormattedData = async (invest) => {
     const price = await getPrice();
-    const actualValue = price * invest
+    const actualValue = (price * invest) * 0.78
     const percent = Math.round(percent_diff(invest, actualValue))
     const amount = Math.round(price * invest)
     return {amount, percent}
