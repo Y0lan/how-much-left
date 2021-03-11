@@ -7,7 +7,7 @@ const getFormattedData = async (invest) => {
     const price = await getPrice();
     const actualValue = (price * invest) * 0.78
     const percent = Math.round(percent_diff(invest, actualValue))
-    const amount = Math.round(price * invest)
+    const amount = Math.round(actualValue)
     return {amount, percent}
 }
 
