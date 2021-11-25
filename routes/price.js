@@ -37,9 +37,9 @@ app.post('/', async (req, res) => {
 
     res.render('index', {
         color,
-        amount: amount + '€' + ' pour ' + invested + '€',
-        percent: prefixPercent + percent + '%',
-        diff: prefixDifference + difference + '€'
+        amount: "/",
+        percent: "/",
+        diff: "/"
     });
 })
 
